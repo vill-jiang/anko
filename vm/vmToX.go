@@ -122,7 +122,7 @@ func tryToInt64(v reflect.Value) (int64, error) {
 	case reflect.Int64, reflect.Int32, reflect.Int16, reflect.Int8, reflect.Int:
 		return v.Int(), nil
 	case reflect.Uint64, reflect.Uint32, reflect.Uint16, reflect.Uint8, reflect.Uint:
-		return v.Uint(), nil
+		return int64(v.Uint()), nil
 	case reflect.Bool:
 		if v.Bool() {
 			return 1, nil
